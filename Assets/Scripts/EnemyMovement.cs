@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public enum State
 {
-    Patroll, Chase
+    Patroll, Chase, Waiting
 }
+
 public class EnemyMovement : MonoBehaviour
 {
  
@@ -20,26 +22,38 @@ public class EnemyMovement : MonoBehaviour
 
     //ChaseLogic
     GameObject player;
-    [SerializeField] float playerProximityThreshold = 0.5f; 
+    [SerializeField] float playerProximityThreshold = 0.5f;
+
+    //WaitingLogic
+    [SerializeField] float rotationSpeed = 2f;
+    [SerializeField] float waitTime = 2f;
+    private float waitTimer;
 
     //EndGame
     GameManager gameManager;
 
-    void Start()
+    ViewField viewField;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        viewField = GetComponentInChildren<ViewField>();
+    }
+
+    void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     private void OnEnable()
     {
-        ViewField.OnStateChange += NewStateSet;
+        viewField.OnStateChange += NewStateSet;
     }
 
     private void OnDisable()
     {
-        ViewField.OnStateChange -= NewStateSet;
+        viewField.OnStateChange -= NewStateSet;
     }
 
     void Update()
@@ -68,11 +82,38 @@ public class EnemyMovement : MonoBehaviour
                 rb.linearVelocity = newDir * speed;
                 break;
 
+            case State.Waiting:
+                rb.linearVelocity = Vector2.zero;
+
+                Vector2 targetLook = points[pointToGo].position - transform.position;
+                float targetAngle = Mathf.Atan2(targetLook.y, targetLook.x) * Mathf.Rad2Deg;
+                float currentAngle = sprite.transform.rotation.eulerAngles.z;
+                float smoothAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, rotationSpeed * 100 * Time.deltaTime);
+
+                sprite.transform.rotation = Quaternion.Euler(0, 0, smoothAngle);
+
+                newDir = new Vector2(Mathf.Cos(smoothAngle * Mathf.Deg2Rad), Mathf.Sin(smoothAngle * Mathf.Deg2Rad));
+
+                if (Mathf.Abs(Mathf.DeltaAngle(currentAngle, targetAngle)) < 5f) 
+                {
+                    waitTimer += Time.deltaTime;
+                    if (waitTimer >= waitTime)
+                    {
+                        waitTimer = 0;
+                        pointToGo = (pointToGo + 1) % points.Length; 
+                    }
+                }
+                break;
+
+
         }
 
         //Rotate the sprite
-        float angle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
-        sprite.transform.rotation = Quaternion.Euler(0, 0, angle);
+        if (state != State.Waiting)
+        {
+            float angle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
+            sprite.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     Vector2 movementDirection(Vector2 target, Vector2 position)

@@ -11,8 +11,10 @@ public class ViewField : MonoBehaviour
     
 
     public delegate void StateSet(State newState);
-    public static event StateSet OnStateChange;
+    //cuidado con el static, si se cambia el estado de un enemigo, se va a cambiar para todos
+    public /*static */event StateSet OnStateChange;
     private State lastState;
+    private State originalState;
 
     GameObject player;
 
@@ -20,13 +22,15 @@ public class ViewField : MonoBehaviour
     {
         enemyMovement = GetComponentInParent<EnemyMovement>();
         player = GameObject.FindGameObjectWithTag("Player");
-       
+
+        originalState = enemyMovement.state;
+        lastState = originalState;
     }
 
     private void Update()
     {
         bool playerDetected = IsPlayerInRange() && IsPlayerInAngle() && IsRaycastClear();
-        State currentState = playerDetected ? State.Chase : State.Patroll;
+        State currentState = playerDetected ? State.Chase : originalState;
 
         //if (playerDetected)
         //{
