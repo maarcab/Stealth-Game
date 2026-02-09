@@ -12,6 +12,7 @@ public class ViewField : MonoBehaviour
 
     public delegate void StateSet(State newState);
     public static event StateSet OnStateChange;
+    private State lastState;
 
     GameObject player;
 
@@ -25,15 +26,21 @@ public class ViewField : MonoBehaviour
     private void Update()
     {
         bool playerDetected = IsPlayerInRange() && IsPlayerInAngle() && IsRaycastClear();
+        State currentState = playerDetected ? State.Chase : State.Patroll;
 
-        if (playerDetected)
+        //if (playerDetected)
+        //{
+
+        //    OnStateChange?.Invoke(State.Chase); 
+        //}
+        //else
+        //{
+        //    OnStateChange?.Invoke(State.Patroll);
+        //}
+        if (lastState != currentState)
         {
-            
-            OnStateChange?.Invoke(State.Chase); 
-        }
-        else
-        {
-            OnStateChange?.Invoke(State.Patroll);
+            OnStateChange?.Invoke(currentState);
+            lastState = currentState;
         }
     }
 

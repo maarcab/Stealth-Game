@@ -39,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        ViewField.OnStateChange += NewStateSet;
+        ViewField.OnStateChange -= NewStateSet;
     }
 
     void Update()
