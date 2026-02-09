@@ -1,1 +1,16 @@
-Place here all the licenses for your assets:
+###############################################################################
+
+
+	Zombie Apocalypse Tileset
+	by Ittai Manero (https://itch.io/profile/ittaimanero)
+
+			------------------------------
+
+	These assets may be used in both personal and commercial projects. 
+	You may edit and add to them as needed. Credit is highly appreciated. 
+	You may not redistribute or re-sell these assets, with or without modifications.
+	(https://ittaimanero.itch.io/zombie-apocalypse-tileset)
+
+
+###############################################################################	
+
