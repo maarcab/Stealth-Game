@@ -5,9 +5,9 @@ using UnityEngine.InputSystem.Controls;
 
 public class ViewField : MonoBehaviour
 {
-    [SerializeField] EnemyMovement enemyMovement;
-    [SerializeField] float coneDistance = 3.0f;
-    [SerializeField] float coneAngle = 90f;
+    [SerializeField] public EnemyMovement enemyMovement;
+    [SerializeField] public float coneDistance = 3.0f;
+    [SerializeField] public float coneAngle = 90f;
     
 
     public delegate void StateSet(State newState);
@@ -72,6 +72,7 @@ public class ViewField : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, coneDistance);
 
