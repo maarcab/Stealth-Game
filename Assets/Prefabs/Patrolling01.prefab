@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764691536052274545}
   m_Layer: 0
-  m_Name: Patrolling
+  m_Name: Patrolling01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 1838498525569488745}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.96211, y: 6.89174, z: 0}
+  m_LocalPosition: {x: -2.3293102, y: 2.10923, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -181,6 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4485534535666700239}
   - component: {fileID: 6323618490182540719}
+  - component: {fileID: 177562792916438764}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -263,6 +264,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &177562792916438764
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908394483173043569}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eaef3036b7f01ef4dbd02a1e47216a98, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2545500721297035701
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +359,6 @@ GameObject:
   - component: {fileID: 7491143355080901107}
   - component: {fileID: 8259827949099985280}
   - component: {fileID: 1429388910276411828}
-  - component: {fileID: 8526029796027831054}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -405,33 +427,12 @@ MonoBehaviour:
   state: 0
   speed: 5
   points:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5772020020437725176}
+  - {fileID: 2627741083155671566}
   playerProximityThreshold: 0.5
   rotationSpeed: 2
   waitTime: 2
---- !u!95 &8526029796027831054
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3768093672344105348}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eaef3036b7f01ef4dbd02a1e47216a98, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  isWalking: 0
 --- !u!1 &7936130072685238072
 GameObject:
   m_ObjectHideFlags: 0
