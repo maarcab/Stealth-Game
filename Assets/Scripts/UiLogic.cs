@@ -19,8 +19,8 @@ public class SimpleUILogic : MonoBehaviour
 
     void Update()
     {
-        float dist = CountersLogic._distanceTraveled;
-        float time = CountersLogic._elapsedTime;
+        float dist = CountersLogic.distanceTraveled;
+        float time = CountersLogic.elapsedTime;
 
         distanceText.text = $"<b>DISTANCE:</b> {dist:F1}m";
         timeText.text = $"<b>TIME:</b> {time:F1}s";

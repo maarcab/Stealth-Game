@@ -96,8 +96,8 @@ public class GameManager : MonoBehaviour
     public void OnEndGame(bool gameLost)
     {
         this.gameLost = gameLost;
-        movement = CountersLogic._distanceTraveled;
-        time = CountersLogic._elapsedTime;
+        movement = CountersLogic.distanceTraveled;
+        time = CountersLogic.elapsedTime;
         if (!gameLost)
         {
             score = 1000 - Convert.ToInt32(time * 0.5f + movement * 1f);
