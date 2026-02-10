@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4479456657007401953}
   - component: {fileID: 534937108854939048}
+  - component: {fileID: 1546397932395309412}
   m_Layer: 0
   m_Name: DetectionPoint
   m_TagString: Untagged
@@ -162,6 +163,21 @@ MonoBehaviour:
   enemyMovement: {fileID: 5214256084666150248}
   coneDistance: 4
   coneAngle: 50
+--- !u!114 &1546397932395309412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032842210718839689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a7728cf61be7f4e878029f36b2841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ViewFieldRender
+  viewField: {fileID: 0}
+  resolution: 30
+  lineWidth: 0.1
 --- !u!1 &2656850171086468107
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8063634150191855382}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: -0.6938322, w: 0.7201367}
   m_LocalPosition: {x: 4.4782796, y: -2.5009599, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -366,7 +382,7 @@ Transform:
   - {fileID: 294513769727695809}
   - {fileID: 8967838038944673778}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.868}
 --- !u!50 &8224868993425448912
 Rigidbody2D:
   serializedVersion: 5

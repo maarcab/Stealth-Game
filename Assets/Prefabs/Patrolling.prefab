@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764691536052274545}
   m_Layer: 0
-  m_Name: Patrolling01
+  m_Name: Patrolling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,6 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 783790551515351347}
   - component: {fileID: 7014873823706470039}
+  - component: {fileID: 121931456573748520}
   m_Layer: 0
   m_Name: DetectionPoint
   m_TagString: Untagged
@@ -480,3 +481,18 @@ MonoBehaviour:
   enemyMovement: {fileID: 1429388910276411828}
   coneDistance: 4
   coneAngle: 50
+--- !u!114 &121931456573748520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7936130072685238072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a7728cf61be7f4e878029f36b2841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ViewFieldRender
+  viewField: {fileID: 0}
+  resolution: 30
+  lineWidth: 0.1
