@@ -34,14 +34,10 @@ public class EnemyMovement : MonoBehaviour
 
     ViewField viewField;
 
-    private Animator animator;
-    public bool isWalking = false;
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         viewField = GetComponentInChildren<ViewField>();
-        animator = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -62,22 +58,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-
-        if (animator != null)
-        {
-            animator.SetBool("Walk", isWalking);
-            if (newDir.magnitude > 0.01f)
-            {
-                animator.SetFloat("MoveX", newDir.x);
-                animator.SetFloat("MoveY", newDir.y);
-            }
-        }
-
         //Set the direction
         switch (state)
         {
             case State.Patroll:
-                isWalking = true;   
                 if (checkProximity(points[pointToGo].position, transform.position))
                 {
                     pointToGo = (pointToGo + 1) % points.Length;
@@ -87,7 +71,6 @@ public class EnemyMovement : MonoBehaviour
                 break;
 
             case State.Chase:
-                isWalking = true;
                 newDir = movementDirection(player.transform.position, transform.position);
 
                 // Si esta muy cerca del jugador, se detiene
@@ -100,25 +83,24 @@ public class EnemyMovement : MonoBehaviour
                 break;
 
             case State.Waiting:
-                isWalking = false;
                 rb.linearVelocity = Vector2.zero;
 
-                Vector2 targetVec = points[pointToGo].position - transform.position;
-                Vector2 targetDir = targetVec.normalized;
+                Vector2 targetLook = points[pointToGo].position - transform.position;
+                float targetAngle = Mathf.Atan2(targetLook.y, targetLook.x) * Mathf.Rad2Deg;
+                float currentAngle = sprite.transform.rotation.eulerAngles.z;
+                float smoothAngle = Mathf.MoveTowardsAngle(currentAngle, targetAngle, rotationSpeed * 100 * Time.deltaTime);
 
-                if (newDir == Vector2.zero) newDir = targetDir;
+                sprite.transform.rotation = Quaternion.Euler(0, 0, smoothAngle);
 
-                newDir = Vector3.RotateTowards(newDir, targetDir, rotationSpeed * Time.deltaTime, 1f);
-                newDir.Normalize();
+                newDir = new Vector2(Mathf.Cos(smoothAngle * Mathf.Deg2Rad), Mathf.Sin(smoothAngle * Mathf.Deg2Rad));
 
-                float angle = Vector2.Angle(newDir, targetDir);
-                if (angle < 2f)
+                if (Mathf.Abs(Mathf.DeltaAngle(currentAngle, targetAngle)) < 5f) 
                 {
                     waitTimer += Time.deltaTime;
                     if (waitTimer >= waitTime)
                     {
                         waitTimer = 0;
-                        pointToGo = (pointToGo + 1) % points.Length;
+                        pointToGo = (pointToGo + 1) % points.Length; 
                     }
                 }
                 break;
@@ -126,12 +108,12 @@ public class EnemyMovement : MonoBehaviour
 
         }
 
-        ////Rotate the sprite
-        //if (state != State.Waiting)
-        //{
-        //    float angle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
-        //    sprite.transform.rotation = Quaternion.Euler(0, 0, angle);
-        //}
+        //Rotate the sprite
+        if (state != State.Waiting)
+        {
+            float angle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
+            sprite.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     Vector2 movementDirection(Vector2 target, Vector2 position)

@@ -9,14 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 inputVector;
     private bool isMoving;
-    private Animator animator;
 
     public bool IsMoving => isMoving;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
 
     public void OnMove(InputValue value)
@@ -30,16 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (isMoving)
         {
-            //float targetAngle = Mathf.Atan2(inputVector.y, inputVector.x) * Mathf.Rad2Deg;
-            //Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed * Time.fixedDeltaTime);
-
-            animator.SetFloat("MoveX", inputVector.x);
-            animator.SetFloat("MoveY", inputVector.y);
+            float targetAngle = Mathf.Atan2(inputVector.y, inputVector.x) * Mathf.Rad2Deg;
+            Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed * Time.fixedDeltaTime);
         }
-    }
-    public Vector2 GetMoveInput()
-    {
-        return rb.linearVelocity.normalized;
     }
 }
