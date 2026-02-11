@@ -13,7 +13,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        if (movement != null)
+        if (movement != null && animator != null)
         {
             animator.SetBool("Walk", movement.IsMoving);
 
