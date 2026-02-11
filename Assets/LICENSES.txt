@@ -14,3 +14,17 @@
 
 ###############################################################################	
 
+	Background art
+
+	Asset Name: Foggy Forest Background Pixel Art
+	Author: heart_courage
+	Source: itch.io
+	Download: https://heart-courage.itch.io/foggy-forest-background-pixel-art
+	License Type: Free for commercial use (itch.io default asset license)
+	Commercial Use: Yes
+	Attribution Required: No (but credited here)
+	Modifications: None
+	Usage in Project: Title screen background
+
+
+###############################################################################	
