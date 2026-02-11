@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public enum State
 {
@@ -16,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float speed;
 
     EnemyAlarm alarm;
+
     //PatrolLogic
     [SerializeField] Transform[] points;
     int pointToGo = 0;
@@ -75,7 +75,6 @@ public class EnemyMovement : MonoBehaviour
             }
         }
 
-        //Set the direction
         switch (state)
         {
             case State.Patroll:
@@ -93,12 +92,12 @@ public class EnemyMovement : MonoBehaviour
                 isWalking = true;
                 newDir = movementDirection(player.transform.position, transform.position);
                 alarm.PlayerDetected();
-                // Si esta muy cerca del jugador, se detiene
+
                 if (Vector2.Distance(transform.position, player.transform.position) <= playerProximityThreshold)
                 {
-                    newDir = Vector2.zero; // Detenerse
+                    newDir = Vector2.zero;
                     rb.linearVelocity = Vector2.zero;
-                    gameManager.OnEndGame(true); //AcabarJuego
+                    gameManager.OnEndGame(true);
                    
                 }
                 rb.linearVelocity = newDir * speed;
