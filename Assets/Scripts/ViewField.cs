@@ -32,15 +32,6 @@ public class ViewField : MonoBehaviour
         bool playerDetected = IsPlayerInRange() && IsPlayerInAngle() && IsRaycastClear();
         State currentState = playerDetected ? State.Chase : originalState;
 
-        //if (playerDetected)
-        //{
-
-        //    OnStateChange?.Invoke(State.Chase); 
-        //}
-        //else
-        //{
-        //    OnStateChange?.Invoke(State.Patroll);
-        //}
         if (lastState != currentState)
         {
             OnStateChange?.Invoke(currentState);

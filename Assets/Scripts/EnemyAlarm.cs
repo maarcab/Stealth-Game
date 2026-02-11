@@ -14,7 +14,7 @@ public class EnemyAlarm : MonoBehaviour
 
     public void PlayerLeft()
     {
-        ChangeColor(new Color(0,0,0,0));
+        ChangeColor(Color.yellow);
     }
 
     private void ChangeColor(Color color)

@@ -9,9 +9,12 @@ public class Ending : MonoBehaviour
     [SerializeField] private Text scoreOrTryAgain;
     [SerializeField] private Text timeDistance;
     GameManager gameManager;
+
+    
     private void Awake()
     {
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        
     }
     void Start()
     {

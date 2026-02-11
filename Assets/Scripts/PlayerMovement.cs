@@ -4,8 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
-    [SerializeField] float turnSpeed = 15.0f;
-
+    
     private Rigidbody2D rb;
     private Vector2 inputVector;
     private bool isMoving;
@@ -30,9 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isMoving)
         {
-            //float targetAngle = Mathf.Atan2(inputVector.y, inputVector.x) * Mathf.Rad2Deg;
-            //Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed * Time.fixedDeltaTime);
+           
 
             animator.SetFloat("MoveX", inputVector.x);
             animator.SetFloat("MoveY", inputVector.y);

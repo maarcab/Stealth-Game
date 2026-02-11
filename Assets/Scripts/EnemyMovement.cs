@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     public State state = State.Patroll;
     [SerializeField] float speed;
 
+    EnemyAlarm alarm;
     //PatrolLogic
     [SerializeField] Transform[] points;
     int pointToGo = 0;
@@ -42,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         viewField = GetComponentInChildren<ViewField>();
         animator = GetComponentInChildren<Animator>();
+        alarm = GetComponentInChildren<EnemyAlarm>();
     }
 
     void Start()
@@ -77,7 +79,8 @@ public class EnemyMovement : MonoBehaviour
         switch (state)
         {
             case State.Patroll:
-                isWalking = true;   
+                isWalking = true;
+                alarm.PlayerLeft();
                 if (checkProximity(points[pointToGo].position, transform.position))
                 {
                     pointToGo = (pointToGo + 1) % points.Length;
@@ -89,13 +92,14 @@ public class EnemyMovement : MonoBehaviour
             case State.Chase:
                 isWalking = true;
                 newDir = movementDirection(player.transform.position, transform.position);
-
+                alarm.PlayerDetected();
                 // Si esta muy cerca del jugador, se detiene
                 if (Vector2.Distance(transform.position, player.transform.position) <= playerProximityThreshold)
                 {
                     newDir = Vector2.zero; // Detenerse
                     rb.linearVelocity = Vector2.zero;
                     gameManager.OnEndGame(true); //AcabarJuego
+                   
                 }
                 rb.linearVelocity = newDir * speed;
                 break;
@@ -103,7 +107,7 @@ public class EnemyMovement : MonoBehaviour
             case State.Waiting:
                 isWalking = false;
                 rb.linearVelocity = Vector2.zero;
-
+                alarm.PlayerLeft();
                 Vector2 targetVec = points[pointToGo].position - transform.position;
                 Vector2 targetDir = targetVec.normalized;
 
