@@ -96,20 +96,41 @@ public class GameManager : MonoBehaviour
     public void OnEndGame(bool gameLost)
     {
         this.gameLost = gameLost;
-        movement = CountersLogic._distanceTraveled;
-        time = CountersLogic._elapsedTime;
-        movement = CountersLogic.distanceTraveled;
-        time = CountersLogic.elapsedTime;
+
+        movement = 0;
+        time = 0;
+        score = 0;
+
         if (!gameLost)
         {
+            movement = CountersLogic.distanceTraveled;
+            time = CountersLogic.elapsedTime;
+
             score = 1000 - Convert.ToInt32(time * 0.5f + movement * 1f);
-            if (score >= highScore)
+            score = Mathf.Max(0, score);
+
+            if (score > highScore)
             {
                 newHighScore = true;
                 highScore = score;
                 PlayerPrefs.SetInt("HighScore", highScore);
+                PlayerPrefs.Save();
+                Debug.Log($"¡Nuevo récord! Score: {score}");
+            }
+            else
+            {
+                newHighScore = false;
             }
         }
+        else
+        {
+            movement = CountersLogic.distanceTraveled;
+            time = CountersLogic.elapsedTime;
+            score = 0;
+            newHighScore = false;
+            Debug.Log($"Game Over - Atrapado. Tiempo: {time}s, Distancia: {movement}m");
+        }
+
         SceneManager.LoadScene("Ending");
     }
 

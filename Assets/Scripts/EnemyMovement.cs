@@ -94,7 +94,8 @@ public class EnemyMovement : MonoBehaviour
                 if (Vector2.Distance(transform.position, player.transform.position) <= playerProximityThreshold)
                 {
                     newDir = Vector2.zero; // Detenerse
-                   // gameManager.OnEndGame(true); //AcabarJuego
+                    rb.linearVelocity = Vector2.zero;
+                    gameManager.OnEndGame(true); //AcabarJuego
                 }
                 rb.linearVelocity = newDir * speed;
                 break;
