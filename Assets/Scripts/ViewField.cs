@@ -11,8 +11,7 @@ public class ViewField : MonoBehaviour
     
 
     public delegate void StateSet(State newState);
-    //cuidado con el static, si se cambia el estado de un enemigo, se va a cambiar para todos
-    public /*static */event StateSet OnStateChange;
+    public event StateSet OnStateChange;
     private State lastState;
     private State originalState;
 

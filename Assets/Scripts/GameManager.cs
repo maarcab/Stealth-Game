@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float movement = 0;
     [SerializeField] float time = 0;
     [SerializeField] int highScore = 0;
+
     int score;
     bool gameLost;
     bool newHighScore = false;
@@ -138,22 +139,27 @@ public class GameManager : MonoBehaviour
     {
         return newHighScore;
     }
+
     public float GetDis()
     {
         return movement;
     }
+
     public float GetTime()
     {
         return time;
     }
+
     public bool GetGameState()
     {
         return gameLost;
     }
+
     public int GetHighScore()
     {
         return highScore;
     }
+
     public int GetScore()
     {
         return score;

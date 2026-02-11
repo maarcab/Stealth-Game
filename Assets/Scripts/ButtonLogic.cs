@@ -8,6 +8,7 @@ public class ButtonLogic : MonoBehaviour
         Debug.Log("Exit");
         Application.Quit();
     }
+
     public void ButtonToScene(string scene)
     {
         SceneManager.LoadScene(sceneName: scene);

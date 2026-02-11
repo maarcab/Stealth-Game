@@ -128,15 +128,7 @@ public class EnemyMovement : MonoBehaviour
                 }
                 break;
 
-
         }
-
-        ////Rotate the sprite
-        //if (state != State.Waiting)
-        //{
-        //    float angle = Mathf.Atan2(newDir.y, newDir.x) * Mathf.Rad2Deg;
-        //    sprite.transform.rotation = Quaternion.Euler(0, 0, angle);
-        //}
     }
 
     Vector2 movementDirection(Vector2 target, Vector2 position)

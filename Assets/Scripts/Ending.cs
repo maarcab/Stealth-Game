@@ -7,14 +7,15 @@ public class Ending : MonoBehaviour
     [SerializeField] private TextMeshProUGUI winOrLose;
     [SerializeField] private TextMeshProUGUI scoreOrTryAgain;
     [SerializeField] private TextMeshProUGUI timeDistance;
-    GameManager gameManager;
 
+    GameManager gameManager;
 
     private void Awake()
     {
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         
     }
+
     void Start()
     {
         if (gameManager.GetGameState())
