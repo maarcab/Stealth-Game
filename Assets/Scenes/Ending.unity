@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 269031733}
   - component: {fileID: 269031734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-bg-b_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,9 +196,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4617917703034963001, guid: 9f9191c57bdf88c43a9b200d07d8cd73,
     type: 3}
@@ -221,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322783238}
   - component: {fileID: 322783239}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-bg-c_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,9 +288,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6546768116223889137, guid: e4dd97784d20dea4e801819c6d74352e,
     type: 3}
@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345171107}
   - component: {fileID: 345171108}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-pine_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,9 +380,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3780925655581376637, guid: 689e8f2f5517dc44d8d3d0da28561795,
     type: 3}
@@ -405,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 660650560}
   - component: {fileID: 660650561}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-pine_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,9 +472,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3780925655581376637, guid: 689e8f2f5517dc44d8d3d0da28561795,
     type: 3}
@@ -555,7 +555,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830754130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -576,7 +576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 849012809}
   - component: {fileID: 849012810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-bg-a_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,9 +643,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4287456562346087022, guid: 88b58374be308bb419de75a0d87a31cf,
     type: 3}
@@ -726,7 +726,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203185073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -746,7 +746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1538067859}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590125411}
   - component: {fileID: 1590125412}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-pine_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,9 +944,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3780925655581376637, guid: 689e8f2f5517dc44d8d3d0da28561795,
     type: 3}
@@ -969,7 +969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661041927}
   - component: {fileID: 1661041928}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-bg_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,9 +1036,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5146424414792105612, guid: c00a9ee192d330a439c82101832fad46,
     type: 3}
@@ -1061,7 +1061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1676040806}
   - component: {fileID: 1676040807}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-tree_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1128,9 +1128,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2062219538295649403, guid: a5fddfc528e3003419eab31cbeb5833b,
     type: 3}
@@ -1211,7 +1211,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749413583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1324,7 +1324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988426181}
   - component: {fileID: 1988426182}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gameasset-1-foggyforest-cabin_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,9 +1391,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 580747973
+  m_SortingLayer: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7717864264615729974, guid: 1a569b1624dc9244dac0c314a7208619,
     type: 3}

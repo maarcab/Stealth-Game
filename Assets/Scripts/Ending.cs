@@ -10,11 +10,11 @@ public class Ending : MonoBehaviour
     [SerializeField] private Text timeDistance;
     GameManager gameManager;
 
-    
+
     private void Awake()
     {
         gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
-        
+
     }
     void Start()
     {
@@ -40,6 +40,15 @@ public class Ending : MonoBehaviour
                 scoreOrTryAgain.text = $"Your score: {gameManager.GetScore()} || Max score: {gameManager.GetHighScore()}";
                 timeDistance.text = $"Time: {Convert.ToInt32(gameManager.GetTime())}s    Distance: {Convert.ToInt32(gameManager.GetDis())}m";
             }
+        }
+    }
+
+    private void OnEnable()
+    {
+        Canvas canvas = GetComponent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.sortingOrder = 999;
         }
     }
 }
